@@ -8,16 +8,16 @@ import {Component, FunctionComponent} from "react";
 
  const Layout = ({children}: LayoutProps): JSX.Element => {
     return (
-        <>
-            <Header/>
+        <div className={styles.wrapper}>
+            <Header className={styles.header}/>
             <div>
-                <Sidebar/>
-                <div>
+                <Sidebar className={styles.sidbar}/>
+                <div className={styles.body}>
                     {children}
                 </div>
             </div>
-            <Footer/>
-        </>
+            <Footer className={styles.footer}/>
+        </div>
     )
 };
 export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
